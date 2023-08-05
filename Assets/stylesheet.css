@@ -1,0 +1,197 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: seashell;
+}
+
+#content {
+    height: 800px;
+}
+
+#center-container {
+    font-size: larger;
+    height: 550px;
+}
+
+#turn {
+    font-size: 28px;
+}
+
+.board {
+    font-size: xx-large;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin: 100px;
+}
+
+.square {
+    width: 140px;
+    height: 140px;
+    border: 6px, rgb(255, 0, 0);
+    border: 1px solid black;
+    transition: 0.2s ease-out;
+    position: relative;
+}
+
+.square:hover {
+    background-color: grey;
+    cursor: pointer;
+}
+
+.gameOver .square:hover,
+.square.X:hover, 
+.square.O:hover {
+    background-color: transparent;
+    cursor: default;
+}
+
+.square .outline {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    width: 140px;
+}
+
+.square .foreground {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    width: 140px;
+}
+
+
+
+
+
+
+.square.O .outline:before {
+    content: "";
+    background-color: transparent;
+    width: 107px;
+    height: 107px;
+    border-radius: 50%;
+    border: 25px solid black;
+    position: absolute;
+    transform: rotate(45deg);
+    z-index: 2;
+}
+
+.square.O .foreground:after {
+    content: "";
+    background-color: transparent;
+    width: 98px;
+    height: 98px;
+    border-radius: 50%;
+    border: 15px solid #55DDE0;
+    position: absolute;
+    transform: rotate(-45deg);
+    z-index: 3;
+}
+
+
+
+
+
+
+
+.square.X .outline:before {
+    content: "";
+    background-color: black;
+    width: 28px;
+    height: 110px;
+    position: absolute;
+    transform: rotate(45deg);
+    z-index: 2;
+}
+
+.square.X .outline:after {
+    content: "";
+    background-color: black;
+    width: 28px;
+    height: 110px;
+    position: absolute;
+    transform: rotate(-45deg);
+    z-index: 2;
+}
+
+.square.X .foreground:before {
+    content: "";
+    background-color: #FE7F2D;
+    width: 18px;
+    height: 100px;
+    position: absolute;
+    transform: rotate(45deg);
+    z-index: 3;
+}
+
+.square.X .foreground:after {
+    content: "";
+    background-color: #FE7F2D;
+    width: 18px;
+    height: 100px;
+    position: absolute;
+    transform: rotate(-45deg);
+    z-index: 3;
+}
+
+
+
+
+.newGame {
+    background-color: forestgreen;
+    color: seashell;
+    padding: 12px 16px;
+    font-size: 18px;
+    border: none;
+    border-radius: 13px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.50), 0 2px;
+    transition: 0.4s ease-out;
+    margin: 140px;
+    position: relative;
+}
+
+.newGame:hover {
+    background-color: rgb(0, 254, 169);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.50), 0 2px;
+    cursor: pointer;
+}
+
+
+#sq1,
+#sq2,
+#sq3{
+    border-top: 0px;
+}
+
+#sq1,
+#sq4,
+#sq7 {
+    border-left: 0px;
+}
+
+#sq7,
+#sq8,
+#sq9 {
+    border-bottom: 0px;
+}
+
+#sq3,
+#sq6,
+#sq9 {
+    border-right: 0px;
+}
